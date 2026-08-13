@@ -1,0 +1,15 @@
+header:
+  version: 19
+  includes:
+    - repo: meta-comradecomputer
+      file: kas/example-images/everythingbagel.yml
+    - repo: meta-comradecomputer
+      file: kas/features/passwordless-root.yml
+
+repos:
+  meta-comradecomputer:
+    url: "https://github.com/Comrade-Computer/meta-comradecomputer.git"
+    branch: wrynose
+    layers:
+      .:
+

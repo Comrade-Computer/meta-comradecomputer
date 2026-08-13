@@ -1,0 +1,32 @@
+header:
+  version: 19
+  includes:
+    - kas/base.yml
+    - kas/features/utf8.yml
+
+repos:
+  meta-erlang:
+    url: https://github.com/meta-erlang/meta-erlang.git
+    branch: wrynose
+    layers:
+      .:
+  
+  meta-oe:
+    url: https://git.openembedded.org/meta-openembedded
+    branch: wrynose
+    layers:
+      meta-oe:
+      meta-networking:
+      meta-python:
+
+local_conf_header:
+  add-erlang: |
+   IMAGE_INSTALL:append = " erlang"
+   ERLANG_VERSION = "29.0"
+   BBMASK:append = " ${@'/erlang_(?!' + d.getVar('ERLANG_VERSION').replace('.', '\.') + ')[^/]*\.bb$'}"
+  add-elixir: |
+   INSANE_SKIP:append:pn-elixir = " buildpaths"
+   INSANE_SKIP:append:pn-elixir-eex = " buildpaths"
+   IMAGE_INSTALL:append = " elixir"
+   ELIXIR_VERSION = "1.19.5"
+   BBMASK:append = " ${@'/elixir_(?!' + d.getVar('ELIXIR_VERSION').replace('.', '\.') + ')[^/]*\.bb$'}"

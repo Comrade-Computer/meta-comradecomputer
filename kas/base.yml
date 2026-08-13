@@ -1,0 +1,32 @@
+header:
+  version: 19
+  includes: 
+    - kas/features/utf8.yml
+
+distro: comrade-os
+
+repos:
+  bitbake:
+    url: https://github.com/openembedded/bitbake.git
+    tag: 2.18.0
+    # this repo does not provide any layers
+    layers: {}
+
+  openembedded-core:
+    url: https://github.com/openembedded/openembedded-core.git
+    branch: wrynose
+    layers:
+      meta:
+
+  meta-yocto:
+    url: https://git.yoctoproject.org/meta-yocto
+    branch: wrynose
+    layers:
+      meta-yocto-bsp:
+      meta-poky:
+
+  meta-comradecomputer:
+    url: "https://github.com/Comrade-Computer/meta-comradecomputer.git"
+    branch: wrynose 
+    layers:
+      .:

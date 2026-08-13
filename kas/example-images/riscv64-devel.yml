@@ -1,0 +1,14 @@
+header:
+  version: 19
+  includes:
+    - repo: meta-comradecomputer
+      file: kas/example-images/everythingbagel-devel.yml
+
+repos:
+  meta-comradecomputer:
+    url: "https://github.com/Comrade-Computer/meta-comradecomputer.git"
+    branch: wrynose
+    layers:
+      .:
+
+machine: qemuriscv64

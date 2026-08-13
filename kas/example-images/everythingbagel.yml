@@ -1,0 +1,23 @@
+header:
+  version: 19
+  includes:
+    - repo: meta-comradecomputer
+      file: kas/base.yml
+    - repo: meta-comradecomputer
+      file: kas/features/languages/beamlangs.yml
+    - repo: meta-comradecomputer
+      file: kas/features/languages/lua.yml
+    - repo: meta-comradecomputer
+      file: kas/features/languages/java25.yml
+    - repo: meta-comradecomputer
+      file: kas/features/languages/python3.yml
+
+repos:
+  meta-comradecomputer:
+    url: "https://github.com/Comrade-Computer/meta-comradecomputer.git"
+    branch: wrynose
+    layers:
+      .:
+
+target: core-image-minimal
+

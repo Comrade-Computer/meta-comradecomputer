@@ -1,0 +1,16 @@
+header:
+  version: 19
+  includes: 
+    - kas/features/utf8.yml
+
+repos:
+  openembedded-core:
+    url: https://github.com/openembedded/openembedded-core.git
+    branch: wrynose
+    layers:
+      meta:
+
+local_conf_header:
+  install_lua: |
+    IMAGE_INSTALL:append = " lua"
+

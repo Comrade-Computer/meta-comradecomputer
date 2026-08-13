@@ -1,0 +1,9 @@
+header:
+  version: 19
+
+local_conf_header:
+  utf8locale: |
+    IMAGE_LINGUAS = "en-us"
+    LOCALE_UTF8_IS_DEFAULT = "1"
+    IMAGE_INSTALL:append = " locale-base-en-us utf8locale"
+

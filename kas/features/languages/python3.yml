@@ -1,0 +1,7 @@
+header:
+  version: 19
+
+local_conf_header:
+  install_python3: |
+    IMAGE_INSTALL:append = " python3"
+
